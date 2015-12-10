@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Travel Memories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="js/jquery-ui-1.11.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+
+    <script src=""></script>
+
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="generated/jquery.mobile.flatui.css"/>
+    <link rel="stylesheet" type="text/css" href="generated/jquery.mobile.flatui.min.css" />
+    <link href="css/demo.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function(){
+            setTimeout(hideSplash, 3000);
+        });
+        function hideSplash(){
+            $.mobile.changePage("#index", "fade");
+        }
+    </script>
+
+</head>
+
+<body>
+<section class="container" data-role="page" id="start">
+    <div data-role="content" class="demo-headline">
+        <h1 class="demo-logo">
+            <div class="logo"></div>
+            Diario de Viajes
+        </h1>
+    </div>
+</section>
+
+<section data-role="page" data-position="fixed" id="index">
+    <div data-role="panel" id="panel" data-position="left" data-theme="d" data-display="push">
+        <div data-role="" style="background-color: #c13a2c">
+            <label data-inline="true">
+                <img id="profilePicture" src="img/unknown.png" style="width: 30%; padding: 50px 0px 0px 15px;">
+                Pepe Perez
+            </label>
+        </div>
+        <a href="#ajustes" data-role="button" data-icon="flat-settings" data-theme="c">Ajustes</a>
+        <a href="#preguntas" data-role="button" data-icon="flat-bubble" data-theme="c">Preguntas Frecuentes</a>
+        <a href="#contactanos" data-role="button" data-icon="flat-mail" data-theme="c">Contáctanos</a>
+    </div>
+
+    <div data-role="header" data-position="fixed" data-theme="d" style="height: 8%; ">
+        <h1 style="font-size: 24px;">Diario de Viajes</h1>
+        <a style="font-size: 24px" data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+    </div>
+
+    <div data-role="content" role="main">
+        <div style="text-align: center">
+            <label><a data-role="button" data-icon="flat-location" data-iconpos="notext" data-theme="c" data-inline="true">Location</a>Europe</label><br/>
+            <a href="#descripcion">
+                <img src="img/prueba.jpg" style="width: 50%; height: 50%">
+            </a>
+            <br/>
+            <label><a data-role="button" data-icon="flat-location" data-iconpos="notext" data-theme="c" data-inline="true">Location</a>Canada</label><br/>
+            <a href="#descripcion">
+                <img src="img/icon.png" style="width: 50%; height: 50%">
+            </a>
+
+            <button data-theme="d" onclick="window.plugins.socialsharing.shareViaTwitter('Message via Twitter')">message via Twitter</button>
+            <button data-theme="e" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')">msg and link via Twitter</button>
+            <button data-theme="c" onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+            <button onclick="window.plugins.socialsharing.shareViaInstagram('Message via Instagram', 'https://www.google.nl/images/srpr/logo4w.png', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Instagram</button>
+            <button onclick="window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via WhatsApp (with errcallback)</button>
+        </div>
+    </div>
+
+    <div data-role="footer" data-theme="d" data-position="fixed" style="text-align: center">
+            <div data-role="controlgroup" data-type="horizontal" data-theme="d">
+                <a href="#" data-icon="flat-mail" data-theme="d" data-iconpos="notext" data-role="button">Yes</a>
+                <a href="#" data-icon="flat-camera" data-theme="d" data-iconpos="notext" data-role="button">Yes</a>
+                <a href="#compassPage" data-icon="clock" data-theme="d" data-iconpos="notext" data-role="button">Yes</a>
+                <a href="#" data-icon="flat-eye" data-theme="d" data-iconpos="notext" data-role="button">Yes</a>
+                <a href="#" data-icon="flat-video" data-theme="d" data-iconpos="notext" data-role="button">Yes</a>
+            </div>
+    </div>
+
+</section>
+
+<section data-role="page" id="descripcion">
+    <div data-role="header" data-theme="d">
+        <h1>Travel Memories</h1>
+        <a data-iconpos="notext" data-role="button" data-rel="back"><span class="fui-arrow-left"></span></a>
+        <a href="#editar" data-rel="popup"  data-position-to="window" data-transition="pop" data-iconpos="notext" data-role="button">
+            <span class="fui-new"></span>
+        </a>
+    </div>
+
+    <div data-role="content">
+        <h5>Mi Viaje a Europa</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Adipisci autem consequuntur cupiditate debitis
+        ducimus ipsam perspiciatis quibusdam repellendus vitae!
+        Architecto eligendi eveniet excepturi fugiat molestias
+        nobis non odit quidem reprehenderit?</p>
+    </div>
+
+    <div data-role="popup" id="editar">
+        <div data-role="content">
+            <header data-theme="d" data-role="header">
+                <h5>Editar Memoria</h5>
+            </header>
+            <div>
+                <label for="editTitle">Titulo</label>
+                <input id="editTitle" type="text" data-clear-btn="true">
+
+                <label for="editContent">Contenido</label>
+                <textarea name="" id="editContent" cols="30" rows="10"></textarea>
+                <div style="text-align: center">
+                    <a href="#" data-role="button" data-rel="back" data-icon="check" data-inline="true" data-mini="true" data-theme="d">Guardar</a>
+                    <a href="#" data-role="button" data-rel="back" data-icon="delete" data-inline="true" data-mini="true" data-theme="d">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div data-role="page" id="ajustes" data-theme="d" data-transition="flow">
+    <header data-role="header" data-theme="d">
+        <a data-iconpos="notext" data-role="button" data-rel="back"><span class="fui-arrow-left"></span></a>
+        <div data-role="" style="background-color: #2d3f51" >
+            <label data-inline="true">
+                <a href="#picture"data-rel="popup" data-position-to="window" data-transition="pop"><img src="img/unknown.png" style="width: 30%; padding: 50px 0px 0px 15px;"></a>
+                Pepe Perez
+            </label>
+        </div>
+    </header>
+    <div data-role="content">
+
+    </div>
+
+    <div data-role="popup" id="picture">
+        <div data-role="content" align="center">
+            <h5>¿Desde donde desea seleccionar su imagen?</h5>
+            <a href="#" data-role="button" data-rel="back" data-icon="camera" data-inline="true" data-mini="true">Cámara</a>
+            <a href="#" data-role="button" data-rel="back" data-icon="grid" data-inline="true" data-mini="true">Galería</a>
+        </div>
+    </div>
+</div>
+
+<section id="compassPage" data-role="page">
+    <header data-role="header" data-theme="d">
+        <a data-iconpos="notext" data-role="button" data-rel="back"><span class="fui-arrow-left"></span></a>
+        <h1>Brújula</h1>
+    </header>
+    <div data-role="content">
+        <br/><br/><br/><br/><br/>
+        <div id="prueba">
+            <img align="center" id="compass" class="Center" src="img/compass320.png"/>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
